@@ -1,0 +1,52 @@
+<style>
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-image: url("https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 20px;
+	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+	color: #FFA600;
+	overflow: auto;
+	padding: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #FFA600;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+	
+}
+
+
+</style>
+
+<div class="container">
+	<table>
+		
+	
+	</table>
+	<p>{{ Y | safe}}</p>
+</div>
+
+
