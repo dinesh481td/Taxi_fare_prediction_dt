@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IBM PROJECT</title>
+	<h3>IBM PROJECT</h2>
+	<h3>TAXI FARE PREDICTION</h3>
+	
+	<style>
+	
+    	body {
+            margin: 10;
+            padding: 0;
+            background-color: #17272B;
+			background-origin: content-box;
+			backdrop-filter: opacity(50%);
+			background-position: center;
+			color: #FFA600;
+			
+			
+            
+        }
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+			background-image: url("https://images.pexels.com/photos/386001/pexels-photo-386001.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-origin: content-box;
+			background-position: center;
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 20px;
+			box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+			color:#FFA600
+		}
+		
+		.left {
+			flex: 1 1 25%;
+			padding: 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.left input {
+			margin-bottom: 10px;
+			margin-bottom: 10px;
+            font-size: 16px;
+            color: #000000;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+		}
+		
+        .left label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+            }
+            
+		.right input{
+    		font-size: 14px;
+    		color : #000000
+            
+            
+            }
+            
+		.right {
+			flex: 1 1 75%;
+			padding: 20px;
+			box-sizing: border-box;
+			color: #000000
+		}
+		h2 {
+          color:#000000
+          
+        }
+        
+        h3{text-align: center;}
+	
+	</style>
+</head>
+<body>
+	<div class="container">
+        <div class="left">
+            <form action="/predict" method="post">
+                <label for="Passenger_Count">Passenger_Count:</label>
+                <input type="number" name="Passenger_Count" min="1" max="6"><br>
+                <label for="RatecodeID">RatecodeID:</label><br>
+                <input type="number" name="RatecodeID" min="1" max="5"><br>
+                <label for="PULocationID">PULocationID:</label>
+                <input type="text" name="PULocationID" placeholder="Input 3"><br>
+                <label for="DOLocationID">DOLocationID:</label>
+                <input type="text" name="DOLocationID" placeholder="Input 4"><br>
+                <label for="Payment_type">Payment_type:</label>
+                <input type="text" name="Payment_type" placeholder="Input 5"><br>
+                <label for="Time_difference_minutes">Time_difference_minutes:</label>
+                <input type="text" name="Time_difference_minutes" placeholder="Input 6"><br>
+                <label for="Trip_distance">Trip_distance(m):</label>
+                <input type="text" name="Trip_distance" placeholder="Input 7"><br>
+                <button>Predict</button>
+                
+            </form>
+            {% if prediction %}
+        <label for="prediction">Prediction:</label>
+        <input type="text" id="prediction" name="prediction" value="{{ prediction }}">
+        {% endif %}
+        </div>
+      	<div class="right">
+  			<h2>File Upload</h2>
+  			<form action="/success" method="post" enctype="multipart/form-data">
+  			
+  				<label for="file">Choose file:</label>
+  				<input type="file" id="file" name="file"><br><br>
+  				
+  				<input type="submit" value="Submit">
+  			</form>
+      	</div>
+	</div>
+</body>
+</html>
+
